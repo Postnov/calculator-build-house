@@ -1,0 +1,20 @@
+body {
+    font-size: 16px;
+    box-sizing: border-box;
+
+    @include _1170 {
+        font-size: 10px;
+    }
+}
+
+*, *:after, *:before {
+    box-sizing: initial
+}
+
+p {
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+}
