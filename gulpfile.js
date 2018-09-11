@@ -87,6 +87,11 @@ gulp.task('pug:comb', function () {
         .pipe(pug({
             pretty: true
         }))
+        .pipe(plumber())
+        .on('error', function (err) {
+            console.log(err.toString());
+            this.emit('end');
+        })
         .pipe(prettyHtml({
             indent_size: 4,
             indent_char: ' ',
