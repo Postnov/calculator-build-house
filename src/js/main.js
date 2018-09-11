@@ -57,6 +57,8 @@ document.addEventListener('DOMContentLoaded', function () {
             item.value = '';
         });
 
+        document.querySelector('input[data-floor]').checked = true;
+
         resultItem.innerHTML = '0';
     });
 
