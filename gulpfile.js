@@ -112,6 +112,7 @@ gulp.task('js:build', function () {
         })
         .pipe(plumber())
         .pipe(gulp.dest(path.dist.js))
+        .pipe(reload({ stream: true }));
 })
 
 gulp.task('js:min', function () {
@@ -131,6 +132,7 @@ gulp.task('css:build', function () {
         })
         .pipe(plumber())
         .pipe(gulp.dest(path.dist.css))
+        .pipe(reload({ stream: true }));
 });
 
 gulp.task('css:polish', function () {

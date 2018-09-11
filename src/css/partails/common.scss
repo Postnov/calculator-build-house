@@ -1,1 +1,149 @@
+.container {
+    max-width: 960px;
+    margin: 50px auto;
+}
 
+.calc {
+    font-family: 'Roboto', sans-serif;
+
+    &__title {
+        font-size: 25px;
+        text-align: center;
+        margin-bottom: 80px;
+    }
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__params {
+        width: 60%;
+    }
+
+    &__images {
+        width: 40%;
+    }
+
+    &__btn {
+        padding: 10px 20px;
+        display: block;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        color: #fff;
+        background-color: #5db130;
+        border: none;
+        transition: .3s all;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 3px;
+
+        &--count {
+            max-width: 100px;
+            margin-top: 50px;
+        }
+
+        &--get-info {
+            max-width: 200px;
+        }
+
+        &:hover {
+            background-color: #509a28;
+        }
+    }
+}
+
+.calc-param {
+    $param: &;
+    margin-bottom: 30px;
+
+    &__title {
+        font-size: 19px;
+        margin: 0 0 15px;
+        color: #333;
+    }
+
+    &__tip {
+        font-size: 15px;
+        color: #666;
+        display: block;
+        width: 100%;
+        margin-top: 3px;
+    }
+
+    &__input {
+        padding: 8px 10px;
+        font-size: 16px;
+        border: 1px solid rgba(34,36,38,.15);
+        max-width: 150px;
+        width: 100%;
+        margin-bottom: 5px;
+        border-radius: 3px;
+        transition: .3s all;
+        outline: none;
+        color: #666;
+        box-shadow: inset 0px 2px 7px -3px rgba(0, 0, 0, .3);
+
+    }
+
+    &__hidden-field {
+        display: none;
+
+        &:checked ~ #{$param}__custom-field {
+            background-color: #5db130;
+            border-color: #5db130;
+            color: #fff;
+        }
+    }
+
+    &__custom-field {
+        padding: 5px 13px;
+        border-radius: 3px;
+        border: 1px solid #bbb;
+        display: inline-block;
+        cursor: pointer;
+        transition: .3s all;
+        color: #888;
+
+        &:hover {
+            border-color: #5db130;
+        }
+    }
+}
+
+.calc__result {
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+    margin: 40px 0;
+}
+
+.calc-offer {
+    text-align: center;
+    margin-top: 80px;
+
+    &__title {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    &__mail {
+        padding: 8px 15px;
+        font-size: 16px;
+        max-width: 250px;
+        width: 90%;
+        margin: 0 auto;
+        display: block;
+        border: 1px solid rgba(34,36,38,.15);
+        margin-bottom: 5px;
+        border-radius: 3px;
+        transition: .3s all;
+        outline: none;
+        box-shadow: inset 0px 2px 7px -3px rgba(0, 0, 0, .3);
+        color: #666;
+        margin-bottom: 30px;
+    }
+
+}
