@@ -43,9 +43,9 @@ document.addEventListener('DOMContentLoaded', function () {
         basePrice *= floorValue;
         total = Number(basePrice * rectangular);
 
-        resultItem.innerHTML = total.toLocaleString("ru-RU", {
-            style: "currency",
-            currency: "RUB"
+        resultItem.innerHTML = total.toLocaleString(undefined, {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
         });
     });
 
