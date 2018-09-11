@@ -4,96 +4,100 @@ html(lang="ru")
 	body
 		.container
 
-			.calc
+			form.calc
 				p.calc__title Посчитайте стоимость вашего дома!
 
 				.calc__contaianer
 					.calc__params
 						.calc__param.calc-param
-							.calc-param__title Площать дома
+							p.calc-param__title Площать дома
 							.calc-param__fields
-								input.calc-param__input(type="text" name="height" placeholder="Длина")
-								input.calc-param__input(type="text" name="width" placeholder="Ширина")
+								input.calc-param__input(type="number" name="length" placeholder="Длина" data-calc="length" required)
+								input.calc-param__input(type="number" name="width" placeholder="Ширина" data-calc="width" required)
 						.calc__param.calc-param
-							.calc-param__title
+							p.calc-param__title
 								span Материал стен
 							.calc-param__fields
-								label.calc-param__label
-									input.calc-param__hidden-field(type="radio" name="wall-material")
+								label.calc-param__label(data-cost="100")
+									input.calc-param__hidden-field(type="radio" name="wall-material" data-cost="100")
 									.calc-param__custom-field Кирпич
-								label.calc-param__label
-									input.calc-param__hidden-field(type="radio" name="wall-material")
+								label.calc-param__label(data-cost="100")
+									input.calc-param__hidden-field(type="radio" name="wall-material" data-cost="100")
 									.calc-param__custom-field Клееный брус
 						.calc__param.calc-param
-							.calc-param__title
+							p.calc-param__title
 								span Внутренние Инженерные сети
 								span.calc-param__tip (выберите один или несколько вариантов)
 							.calc-param__fields
-								label.calc-param__label
-									input.calc-param__hidden-field(type="checkbox" name="inner-network")
+								label.calc-param__label(data-cost="100")
+									input.calc-param__hidden-field(type="checkbox" name="inner-network" data-cost="100")
 									.calc-param__custom-field Отопление
-								label.calc-param__label
-									input.calc-param__hidden-field(type="checkbox" name="inner-network")
+								label.calc-param__label(data-cost="100")
+									input.calc-param__hidden-field(type="checkbox" name="inner-network" data-cost="100")
 									.calc-param__custom-field Водоснабжение
 						.calc__param.calc-param
-							.calc-param__title Наружная отделка стен
+							p.calc-param__title Наружная отделка стен
 							.calc-param__fields
-								label.calc-param__label
-									input.calc-param__hidden-field(type="radio" name="external-wall")
+								label.calc-param__label(data-cost="100")
+									input.calc-param__hidden-field(type="radio" name="external-wall" data-cost="100")
 									.calc-param__custom-field Кирпич
-								label.calc-param__label
-									input.calc-param__hidden-field(type="radio" name="external-wall")
+								label.calc-param__label(data-cost="100")
+									input.calc-param__hidden-field(type="radio" name="external-wall" data-cost="100")
 									.calc-param__custom-field Клееный брус
 						.calc__param.calc-param
-							.calc-param__title Количество этажей
+							p.calc-param__title Количество этажей
 							.calc-param__fields
-								label.calc-param__label
-									input.calc-param__hidden-field(type="radio" name="floor-count")
+								label.calc-param__label(data-cost="100")
+									input.calc-param__hidden-field(type="radio" name="floor-count" data-floor="1" checked)
 									.calc-param__custom-field 1
-								label.calc-param__label
-									input.calc-param__hidden-field(type="radio" name="floor-count")
+								label.calc-param__label(data-cost="100")
+									input.calc-param__hidden-field(type="radio" name="floor-count" data-floor="2")
 									.calc-param__custom-field 2
-								label.calc-param__label
-									input.calc-param__hidden-field(type="radio" name="floor-count")
+								label.calc-param__label(data-cost="100")
+									input.calc-param__hidden-field(type="radio" name="floor-count" data-floor="3")
 									.calc-param__custom-field 3
 						.calc__param.calc-param
-							.calc-param__title Выбор проекта
+							p.calc-param__title Выбор проекта
 							.calc-param__fields
-								label.calc-param__label
-									input.calc-param__hidden-field(type="radio" name="project")
+								label.calc-param__label(data-cost="100")
+									input.calc-param__hidden-field(type="radio" name="project" data-cost="100")
 									.calc-param__custom-field Типовой
-								label.calc-param__label
-									input.calc-param__hidden-field(type="radio" name="project")
+								label.calc-param__label(data-cost="100")
+									input.calc-param__hidden-field(type="radio" name="project" data-cost="100")
 									.calc-param__custom-field Индивидуальный
 						.calc__param.calc-param
-							.calc-param__title
+							p.calc-param__title
 								span Наружные инженерные сети
 								span.calc-param__tip (выберите один или несколько вариантов)
 							.calc-param__fields
-								label.calc-param__label
-									input.calc-param__hidden-field(type="checkbox" name="external-network")
+								label.calc-param__label(data-cost="100")
+									input.calc-param__hidden-field(type="checkbox" name="external-network" data-cost="100")
 									.calc-param__custom-field Отопление
-								label.calc-param__label
-									input.calc-param__hidden-field(type="checkbox" name="external-network")
+								label.calc-param__label(data-cost="100")
+									input.calc-param__hidden-field(type="checkbox" name="external-network" data-cost="100")
 									.calc-param__custom-field Водоснабжение
 						.calc__param.calc-param
-							.calc-param__title Внутренняя отделка помещений
+							p.calc-param__title Внутренняя отделка помещений
 							.calc-param__fields
 								label.calc-param__label
-									input.calc-param__hidden-field(type="checkbox" name="inner-work-wall")
+									input.calc-param__hidden-field(type="checkbox" name="inner-work-wall" data-cost="100")
 									.calc-param__custom-field Отопление
 								label.calc-param__label
-									input.calc-param__hidden-field(type="checkbox" name="inner-work-wall")
+									input.calc-param__hidden-field(type="checkbox" name="inner-work-wall" data-cost="100")
 									.calc-param__custom-field Водоснабжение
 
 
 					.calc__images
 
 
-				button.calc__btn.calc__btn--count Рассчитать
-				.calc__result Примерная стоимость дома - #[span 1 000 000]
+				button.calc__btn.calc__btn--count.js-calc-count Рассчитать
+				button.calc__btn.calc__btn--reset.js-calc-reset сбросить
+				p.calc__result Стоимость вашего дома от #[span 0]
 
 				.calc__offer.calc-offer
-					.calc-offer__title Хотите получить более подробную информацию по выбранной вами комплектации дома?
+					p.calc-offer__title Хотите получить более подробную информацию по выбранной вами комплектации дома?
 					input.calc-offer__mail(type="mail" placeholder="mail@mail.ru")
-					.calc__btn.calc__btn--get-info Получить информацию
+					button.calc__btn.calc__btn--get-info Получить информацию
+
+
+		script(src="js/main.js")
