@@ -3,101 +3,109 @@ html(lang="ru")
 	include partails/head.pug
 	body
 		.container
-
-			form.calc
+			form.calc#calc-form
 				p.calc__title Посчитайте стоимость вашего дома!
 
-				.calc__contaianer
+				.calc__container
 					.calc__params
 						.calc__param.calc-param
-							p.calc-param__title Площать дома
+							header.calc-param__header
+								p.calc-param__title Площать дома*
 							.calc-param__fields
-								input.calc-param__input(type="number" name="length" placeholder="Длина" data-calc="length" required)
-								input.calc-param__input(type="number" name="width" placeholder="Ширина" data-calc="width" required)
+								input.calc-param__input(type="number" name="meters" placeholder="Кв.м" data-calc="meters")
 						.calc__param.calc-param
-							p.calc-param__title
-								span Материал стен
+							header.calc-param__header
+								p.calc-param__title Материал стен*
 							.calc-param__fields
 								label.calc-param__label(data-cost="100")
-									input.calc-param__hidden-field(type="radio" name="wall-material" data-cost="100")
+									input.calc-param__hidden-field(type="radio" value="Кирпич" name="wall-material" data-cost="100" )
 									.calc-param__custom-field Кирпич
 								label.calc-param__label(data-cost="100")
-									input.calc-param__hidden-field(type="radio" name="wall-material" data-cost="100")
+									input.calc-param__hidden-field(type="radio" value="Клееный брус" name="wall-material" data-cost="100" )
 									.calc-param__custom-field Клееный брус
 						.calc__param.calc-param
-							p.calc-param__title
-								span Внутренние Инженерные сети
+							header.calc-param__header
+								p.calc-param__title Внутренние Инженерные сети*
 								span.calc-param__tip (выберите один или несколько вариантов)
 							.calc-param__fields
 								label.calc-param__label(data-cost="100")
-									input.calc-param__hidden-field(type="checkbox" name="inner-network" data-cost="100")
+									input.calc-param__hidden-field(type="checkbox" value="Отопление" name="inner-network" data-cost="100")
 									.calc-param__custom-field Отопление
 								label.calc-param__label(data-cost="100")
-									input.calc-param__hidden-field(type="checkbox" name="inner-network" data-cost="100")
+									input.calc-param__hidden-field(type="checkbox" value="Водоснабжение" name="inner-network" data-cost="100")
 									.calc-param__custom-field Водоснабжение
 						.calc__param.calc-param
-							p.calc-param__title Наружная отделка стен
+							header.calc-param__header
+								p.calc-param__title Наружная отделка стен*
 							.calc-param__fields
-								label.calc-param__label(data-cost="100")
-									input.calc-param__hidden-field(type="radio" name="external-wall" data-cost="100")
-									.calc-param__custom-field Кирпич
-								label.calc-param__label(data-cost="100")
-									input.calc-param__hidden-field(type="radio" name="external-wall" data-cost="100")
-									.calc-param__custom-field Клееный брус
+								label.calc-param__label.calc-param__label--external-wall(data-cost="100")
+									input.calc-param__hidden-field(type="radio" value="Облицовка" name="external-wall" data-cost="100")
+									.calc-param__custom-field Облицовка
+								label.calc-param__label.calc-param__label--external-wall(data-cost="100")
+									input.calc-param__hidden-field(type="radio" value="Декоративная штукатурка" name="external-wall" data-cost="100" )
+									.calc-param__custom-field Декоративная штукатурка
+								label.calc-param__label.calc-param__label--external-wall(data-cost="100")
+									input.calc-param__hidden-field(type="radio" value="Покраска" name="external-wall" data-cost="100" )
+									.calc-param__custom-field Покраска
 						.calc__param.calc-param
-							p.calc-param__title Количество этажей
+							header.calc-param__header
+								p.calc-param__title Количество этажей*
 							.calc-param__fields
 								label.calc-param__label(data-cost="100")
-									input.calc-param__hidden-field(type="radio" name="floor-count" data-floor="1" checked)
+									input.calc-param__hidden-field(type="radio" value="1 этаж" name="floor-count" data-floor="1" checked)
 									.calc-param__custom-field 1
 								label.calc-param__label(data-cost="100")
-									input.calc-param__hidden-field(type="radio" name="floor-count" data-floor="2")
+									input.calc-param__hidden-field(type="radio" value="2 этажа" name="floor-count" data-floor="2" )
 									.calc-param__custom-field 2
 								label.calc-param__label(data-cost="100")
-									input.calc-param__hidden-field(type="radio" name="floor-count" data-floor="3")
+									input.calc-param__hidden-field(type="radio" value="3 этажа" name="floor-count" data-floor="3" )
 									.calc-param__custom-field 3
 						.calc__param.calc-param
-							p.calc-param__title Выбор проекта
+							header.calc-param__header
+								p.calc-param__title Выбор проекта*
 							.calc-param__fields
 								label.calc-param__label(data-cost="100")
-									input.calc-param__hidden-field(type="radio" name="project" data-cost="100")
+									input.calc-param__hidden-field(type="radio" value="Типовой" name="project" data-cost="100")
 									.calc-param__custom-field Типовой
 								label.calc-param__label(data-cost="100")
-									input.calc-param__hidden-field(type="radio" name="project" data-cost="100")
+									input.calc-param__hidden-field(type="radio" value="Индивидуальный" name="project" data-cost="100" )
 									.calc-param__custom-field Индивидуальный
 						.calc__param.calc-param
-							p.calc-param__title
-								span Наружные инженерные сети
+							header.calc-param__header
+								p.calc-param__title Наружные инженерные сети*
 								span.calc-param__tip (выберите один или несколько вариантов)
 							.calc-param__fields
 								label.calc-param__label(data-cost="100")
-									input.calc-param__hidden-field(type="checkbox" name="external-network" data-cost="100")
-									.calc-param__custom-field Отопление
+									input.calc-param__hidden-field(type="checkbox" value="Устройство скважины" name="external-network" data-cost="100")
+									.calc-param__custom-field Устройство скважины
 								label.calc-param__label(data-cost="100")
-									input.calc-param__hidden-field(type="checkbox" name="external-network" data-cost="100")
-									.calc-param__custom-field Водоснабжение
+									input.calc-param__hidden-field(type="checkbox" value="Система газификации" name="external-network" data-cost="100" )
+									.calc-param__custom-field Система газификации
 						.calc__param.calc-param
-							p.calc-param__title Внутренняя отделка помещений
+							header.calc-param__header
+								p.calc-param__title Внутренняя отделка помещений*
 							.calc-param__fields
 								label.calc-param__label
-									input.calc-param__hidden-field(type="checkbox" name="inner-work-wall" data-cost="100")
-									.calc-param__custom-field Отопление
+									input.calc-param__hidden-field(type="checkbox" checked value="Предчистовая отделка" name="inner-work-wall" data-cost="100")
+									.calc-param__custom-field Предчистовая отделка
 								label.calc-param__label
-									input.calc-param__hidden-field(type="checkbox" name="inner-work-wall" data-cost="100")
-									.calc-param__custom-field Водоснабжение
+									input.calc-param__hidden-field(type="checkbox" value="Чистовая отделка" name="inner-work-wall" data-cost="100" )
+									.calc-param__custom-field Чистовая отделка
 
 
 					.calc__images
 
 
-				button.calc__btn.calc__btn--count.js-calc-count Рассчитать
-				button.calc__btn.calc__btn--reset.js-calc-reset сбросить
+				button.calc__btn.calc__btn--count.js-calc-count(type="button") Рассчитать
+				button.calc__btn.calc__btn--reset.js-calc-reset(type="button") сбросить
 				p.calc__result Стоимость вашего дома от #[span 0] руб.
 
-				.calc__offer.calc-offer
+
+
+				.calc__offer.calc-offer.hidden
 					p.calc-offer__title Хотите получить более подробную информацию по выбранной вами комплектации дома?
-					input.calc-offer__mail(type="mail" placeholder="mail@mail.ru")
-					button.calc__btn.calc__btn--get-info Получить информацию
+					input.calc-offer__mail(type="email" placeholder="mail@mail.ru")
+					button.calc__btn.calc__btn--get-info#calc-send-mail(type="button") Получить информацию
 
-
+		//- script(src="https://code.jquery.com/jquery-3.3.1.min.js")
 		script(src="js/main.js")
